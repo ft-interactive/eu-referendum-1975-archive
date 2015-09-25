@@ -1,0 +1,72 @@
+.article-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  > h2 { font-weight: 600; }
+
+  > p {
+    font: 21px/1.375 ftFont('FinancierTextWeb');
+    margin-bottom: 21px * 1.375;
+
+    &:first-of-type:first-letter {
+      font-size: 70px;
+      line-height: 0.6;
+      font-family: ftFont('FinancierDisplayWeb');
+      float: left;
+      margin-right: 10px;
+      margin-top: 6px;
+      color: #43423e;
+    }
+    
+    // for regular inline images (NOT archive-readers)
+    > figure {
+      margin: 0 auto;
+      max-width: 90vw;
+      position: relative;
+
+      > img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+
+      > figcaption {
+        font: 16px ftFont('MetricWeb');
+        color: #777777;
+        max-width: 100%;
+        margin: 10px auto;
+      }
+    }
+  }
+
+  &__share-links {
+    margin-left: -5px;
+
+    &:before {
+      content: '';
+      width: 60px;
+      border-top: 1px solid ftColor('grey-tint2');
+      display: block;
+      margin: 20px 0 20px 5px;
+    }
+  }
+}
+
+
+@include oGridRespondTo(M) {
+  .article-content {
+    > p {
+      &:first-of-type:first-letter {
+        font-size: 110px;
+      }
+
+      > figure {
+        max-width: 600px;
+      }
+    }
+
+  }
+
+
+}

@@ -1,0 +1,101 @@
+.page-header {
+  position: relative;
+
+  &__newspaper {
+    position: relative;
+    height: 200px;
+    padding-top: 1px;
+    transform: translateZ(0);
+    background: black;
+
+    &__inner {
+      height: 100%;
+      background: transparent url(../images/header.jpg) center -50px no-repeat;  
+      background-size: 600px;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background-image: url(https://image.webservices.ft.com/v1/images/raw/fticon:brand-ft-logo-square?source=test&width=32&tint=ffffff,ffffff);
+    display: block;
+    margin: 10px;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    > span {
+      @include visually-hidden;
+    }
+  }
+}
+
+
+@include oGridRespondTo(S) {
+  .page-header {
+    &__newspaper {
+      &__inner {
+        background-size: 730px;
+      }
+    }
+  }
+}
+
+@include oGridRespondTo(M) {
+  .page-header {
+    &__newspaper {
+      height: 260px;
+
+      &__inner {
+        background-size: 970px;
+      }
+    }
+  }
+}
+
+@include oGridRespondTo(L) {
+  .page-header {
+    &__newspaper {
+      // max-width: 1400px;
+      margin: 0 auto;
+      height: 500px;
+
+      &__inner {
+        background-position: center -80px;
+        background-size: 1210px;
+      }
+    }
+
+    &__logo {
+      background-image: url(https://image.webservices.ft.com/v1/images/raw/fticon:brand-ft-logo-square?source=test&width=60&tint=ffffff,ffffff);
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  body main {
+    margin-top: -130px;
+    padding-top: 1px;
+  }
+}
+
+@include oGridRespondTo(XL) {
+  .page-header {
+    max-width: 1600px;
+    margin: 0 auto;
+
+    &__newspaper {
+
+      &__inner {
+        background-size: 1600px;
+        background-position: center -140px;
+      }
+    }
+  }
+}

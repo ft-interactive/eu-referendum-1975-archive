@@ -1,0 +1,183 @@
+.overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 5;
+  cursor: pointer;
+
+  &--hidden {
+    display: none;
+  }
+
+  &__inner {
+    @include shadow-8dp;
+    position: relative;
+    background-color: white;
+    cursor: auto;
+    margin: 0 auto;
+    border-radius: 1px;
+  }
+    &__content {
+      padding: 0 20px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      height: 100%;
+
+
+      h1 {
+        font: normal 40px ftFont('FinancierDisplayWeb');
+        margin-top: 17px;
+        margin-bottom: 17px;
+      }
+    
+      // pre-headlines
+      h3 {
+        margin-bottom: -5px;
+        font-size: 20px;
+      }
+    
+      // bylines
+      h6 {
+        font: normal 16px/1 ftFont('MetricWeb');
+        margin: 0;
+
+        strong {
+          font-weight: 600;
+        }
+
+        &:after {
+          content: '';
+          width: 60px;
+          display: block;
+          border-bottom: 1px solid #979797;
+          padding-bottom: 22px;
+        }
+      }
+
+      p > strong {
+        font-weight: 600;
+        font-family: ftFont('FinancierDisplayWeb');
+        word-spacing: 0.1em;
+      }
+      
+      ul {
+        margin-top: -5px;
+      }
+
+      li > strong {
+        font: 600 20px ftFont('MetricWeb');
+      }
+
+      h2 {
+        font: italic normal 25px ftFont('FinancierTextWeb');
+
+        & + h2 {
+          margin-top: -10px;
+        }
+      }
+    }
+
+
+    &__close-button {
+      position: absolute;
+      top: -36px;
+      right: 0;
+      color: white;
+      font: bold 30px/1 sans-serif;
+      z-index: 6;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+  &__date {
+    // text-transform: uppercase;
+    // font: 14px ftFont(MetricWeb);
+    font-size: 19px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    &:before {
+      content: 'ORIGINALLY PUBLISHED';
+      display: block;
+      font: 600 14px ftFont('MetricWeb');
+      color: #b23150;      
+    }
+  }
+}
+
+.overlay--map {
+  .overlay__inner {
+    background: ftColor('pink');
+  }
+
+  .overlay__date:before {
+    content: 'ORIGINAL MAP PUBLISHED';
+  }
+
+  h2 {
+    font-weight: 600;
+    margin-left: 30px;
+    font: normal 600 1.5em ftFont('MetricWeb');
+  }
+}
+
+
+
+
+
+@include oGridRespondTo(S) {
+  .overlay {
+    &__inner {
+    }
+  }
+}
+
+
+
+// EXTRA BITS FOR MAP
+.key {
+  color: #666666;
+  padding: 0;
+  list-style: none;
+  // font-size: 18px;
+  font-size: 16px;
+  margin-left: 30px;
+  margin-bottom: -5px;
+
+  &__colour {
+    width: 20px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 8px;
+  }
+}
+
+.new-map {
+  width: 70%;
+  display: block;
+  margin: 0 auto 40px;
+}
+
+body div .map-note {
+  font: oblique 16px ftFont('MetricWeb');
+}
+
+@include oGridRespondTo(M) {
+  .new-map {
+    margin-top: -60px;
+  }
+
+  .key {
+    font-size: 18px;
+    line-height: 1.3;
+
+    &__colour {
+      width: 25px;
+      height: 13px;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+// Configuration for Origami components
+$o-assets-global-path: '//build.origami.ft.com/files/';
+$o-grid-is-silent: true;
+// $o-grid-debug-mode: true;
+
+
+// Origami components
+@import 'o-fonts/main';
+@import 'o-footer/main';
+@import 'o-grid/main';
+@import 'o-colors/main';
+
+
+// Own misc. mixins etc.
+@import 'functions';
+@import 'mixins';
+@import 'vars';
+
+
+// Load fonts
+@import 'fonts';
+
+
+// Styles for this particular app
+@import 'base';
+@import 'page-header';
+@import 'main-el';
+@import 'article-header';
+@import 'article-content';
+@import 'archive-reader';
+@import 'overlay';
+@import 'share-links';
+
+
+
+// BELOW: miscellaneous stuff that should probably be sorted into partials.
+
+
+// Page scrolling stuff
+.page-wrap-1 {
+  width: 100%;
+}
+  .page-wrap-2 {
+    width: 100%;
+    position: relative;
+  }
+
+.prevent-scrolling {
+  > body {
+    > .page-wrap-1 {
+      height: 100vh;
+      overflow: hidden;
+
+      > .page-wrap-2 {
+      }
+    }
+  }
+}
+
+
+// blur stuff when overlay is showing
+.showing-overlay {
+  body > *:not(.overlay) {
+    -webkit-filter: blur(2px);
+  }
+}
+
+
+
+
+
+.promo-link {
+  display: block;
+  border-top: 1px solid #666666;
+  border-bottom: 1px solid #666666;
+  padding-bottom: 20px;
+  max-width: 280px;
+  margin: 0 auto;
+
+  > img {
+    max-width: 100%;
+    display: block;
+  }
+
+
+  &__text {
+    color: #117b91;
+    font: 22px ftFont('MetricWeb');
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  &:hover .promo-link__text,
+  &:active .promo-link__text {
+    color: #2bbbbf;
+  }
+}
+
+
+@include oGridRespondTo(L) {
+  .promo-link {
+    float: left;
+    margin: 7px 30px 20px -100px;
+  }
+}

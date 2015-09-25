@@ -1,0 +1,94 @@
+.article-header {
+  padding: 0 10px;
+
+  &__headline {
+    font: 600 34px ftFont('MetricWeb');
+    color: ftColor('grey-tint5');
+    margin: 15px 0 0;
+  }
+
+  &__standfirst {
+    margin-top: 10px;
+    font: italic 25px ftFont('FinancierTextWeb');
+    color: #666666;
+  }
+
+  &__metadata {
+    margin: 15px 0;
+    font: 400 14px/1.5 ftFont('FinancierTextWeb');
+
+    > p {
+      margin-top: 0;
+      margin-bottom: 0;
+      font: inherit;
+    }
+  }
+
+    &__byline {
+      text-transform: uppercase;
+      font-family: ftFont('FinancierTextWeb');
+      display: block;
+    }
+
+    &__date {
+      color: ftColor('grey-tint5');
+      margin: 30px 0;
+
+      // > span {
+      //   font-family: ftFont('MetricWeb');
+      //   font-size: 0.85em;
+      //   margin-right: 0.3em;
+      //   text-transform: uppercase;
+      // }
+    }
+
+  &__share-links {
+    margin: 22px 0 -8px;
+  }
+
+  // grey line underneath
+  &:after {
+    content: '';
+    width: 60px;
+    border-top: 1px solid ftColor('grey-tint2');
+    display: block;
+    margin: 20px 0;
+  }
+}
+
+
+
+@include oGridRespondTo(M) {
+  .article-header {
+    text-align: center;
+    &__metadata {
+      font-size: 17px;
+    }
+
+      &__byline {
+        display: inline;
+        margin-right: 1.2em;
+      }
+      &__date {
+        display: inline;
+      }
+
+    &__headline {
+      font-size: 70px;
+      margin: 40px 0;
+    }
+
+    &__standfirst {
+      font-size: 40px;
+    }
+    
+    &__share-links {
+      margin-bottom: -18px;
+    }
+
+    // centre the grey line
+    &:after {
+      margin: 40px auto;
+    }
+  }
+}

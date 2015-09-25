@@ -1,0 +1,70 @@
+.archive-reader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 60px;
+
+  &__figure {
+    @include shadow-4dp;
+
+    // margin: 0 auto;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    // width: 300px;
+    max-width: 300px;
+    display: inline-block;
+
+    transition: box-shadow 0.1s linear;
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      $size: 80px;
+      content: '';
+      width: $size;
+      height: $size;
+      background: url(../images/click-me.png);
+      background-size: $size $size;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: 0 - ($size/2);
+      margin-left: 0 - ($size/2);
+      opacity: 0.92;
+    }
+
+    &:hover {
+      @include shadow-8dp;
+      transition: box-shadow 0.1s linear;
+
+      &:after { opacity: 1 };
+    }
+
+    &:active {
+      > img {
+        transition: opacity 0s linear;
+      }
+    }
+
+    > img {
+      display: block;
+      transition: opacity 0.5s linear;
+      max-width: 300px;
+      border-radius: 1px;
+    }
+  }
+}
+
+
+@include oGridRespondTo(M) {
+  .archive-reader {
+    &__figure {
+      max-width: 500px;
+
+      > img {
+        max-width: 500px;
+      }
+    }
+  }
+}
