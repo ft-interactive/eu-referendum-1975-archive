@@ -28,7 +28,7 @@ if (cutsTheMustard) {
   );
 
   // add polyfill bundle (see polyfill.io for how to add non-default polyfills to this)
-  addScript('https://cdn.polyfill.io/v1/polyfill.min.js');
+  addScript('https://cdn.polyfill.io/v2/polyfill.min.js');
 }
 else {
   // browser is too old - just enable the HTML5 shiv (so basic HTML5 styling works)

@@ -1,5 +1,9 @@
-// Configuration for Origami components
-$o-assets-global-path: '//build.origami.ft.com/files/';
+
+$o-fonts-path: 'https://build.origami.ft.com/v2/files/o-fonts-assets@1.3.0/';
+
+// this makes footer logo work
+$o-assets-global-path: 'https://build.origami.ft.com/v2/files/';
+
 $o-grid-is-silent: true;
 // $o-grid-debug-mode: true;
 
