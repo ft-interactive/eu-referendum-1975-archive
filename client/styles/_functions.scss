@@ -1,6 +1,6 @@
 // The `ftFont` function is a shortcut to get the proper name of an FT font (plus fallbacks) from o-fonts
 //   EXAMPLE: ftFont('FinancierTextWeb'); // returns "FinancierTextWeb, serif"
-//   See http://registry.origami.ft.com/components/o-fonts
+//   See https://origami-bower-registry.ft.com/components/o-fonts
 
 @function ftFont($name) {
   @return oFontsGetFontFamilyWithFallbacks($name);
@@ -9,7 +9,7 @@
 
 // The `ftColor` function is a shortcut to get a hex colour from o-colors
 //   EXAMPLE: ftColor('pink'); // returns #fff1e0
-//   See http://registry.origami.ft.com/components/o-colors
+//   See https://origami-bower-registry.ft.com/components/o-colors
 
 @function ftColor($name) {
   @return oColorsGetPaletteColor($name);
